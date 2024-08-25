@@ -1,14 +1,15 @@
 package main
 import(
-	"log" 
+	"log"
+	"os" 
 	"github.com/go-telegram-bot-api/telegram-bot-api"
 )
-const TG_BOT_TOKEN = "7511256449:AAEalY7UpBiZ63JyPdCxOUkP4oDNX3roXi8"
+
 
 func main() {
-	botToken := "7511256449:AAEalY7UpBiZ63JyPdCxOUkP4oDNX3roXi8"
+	botToken := os.Getenv("TG_TOKEN")
 	if botToken == "" {
-		log.Fatal("TELEGRAM_BOT_TOKEN environment variable is required")
+		log.Fatal("TG_TOKEN environment variable is required")
 	}
 
 	bot, err := tgbotapi.NewBotAPI(botToken)
