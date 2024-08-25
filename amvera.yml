@@ -1,0 +1,11 @@
+meta:
+  environment: golang
+  toolchain:
+    name: go
+    version: 1.23
+build:
+  image: golang:1.23
+run:
+  image: golang:1.23
+  persistenceMount: /data
+  containerPort: 80
